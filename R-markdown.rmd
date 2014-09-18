@@ -1,0 +1,36 @@
+---
+title: "practical.machine.learning"
+author: "Evlabios"
+date: "Thursday, September 18, 2014"
+output: html_document
+---
+The code used is as follows:
+
+  library(lattice)
+  library(ggplot2)
+  library(caret)
+
+  data<-read.csv("pml-training.csv")
+  inTrain<-createDataPartition(y=data$classe, p=0.7, list = FALSE)
+  training<-data[inTrain,]
+  testing<-data[-inTrain,]
+  modFit<-train(classe~roll_belt,method="rpart",data=training)
+  predict(modFit,newdata=testing)
+
+
+As in the lectures, i followed the standard steps in creating partitions from the training set. I divided the training set from the csv file into two variables; testing and training.
+This way, I could use cross validation at the end with the predict function using the model, created from the training variable, along with the testing variable.
+
+The model was built with the classe and roll_belt variables.
+I didn't use all variables because i could not process the model. The application got stack.
+Also, the method used was prediction with trees. It's a good choice for this kind of data.
+-With all variables as predictors, the model could be more accurate.
+
+I did not use the 20 test cases for my testing data, for the prediction, because they are going to be used in the submissions assignment.
+
+The expected out of sample error, is high because only one variable (except classe) is used. To get an idea of the situation I uesd:
+c<-predict(modFit,newdata=testing)
+c<-as.numeric(c)
+And ploted it with the actual testing data.
+Mean square root error technic may also be used.
+Error estimated: around 0.8
