@@ -7,14 +7,21 @@ output: html_document
 The code used is as follows:
 
   library(lattice);
+  
   library(ggplot2);
+  
   library(caret);
 
   data<-read.csv("pml-training.csv");
+  
   inTrain<-createDataPartition(y=data$classe, p=0.7, list = FALSE);
+  
   training<-data[inTrain,];
+  
   testing<-data[-inTrain,];
+  
   modFit<-train(classe~roll_belt,method="rpart",data=training);
+  
   predict(modFit,newdata=testing);
 
 
