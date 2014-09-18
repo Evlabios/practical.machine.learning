@@ -6,23 +6,23 @@ output: html_document
 ---
 The code used is as follows:
 
-  library(lattice);
+  	library(lattice);
   
-  library(ggplot2);
+  	library(ggplot2);
   
-  library(caret);
+  	library(caret);
 
-  data<-read.csv("pml-training.csv");
+  	data<-read.csv("pml-training.csv");
   
-  inTrain<-createDataPartition(y=data$classe, p=0.7, list = FALSE);
+		inTrain<-createDataPartition(y=data$classe, p=0.7, list = FALSE);
   
-  training<-data[inTrain,];
+  	training<-data[inTrain,];
   
-  testing<-data[-inTrain,];
+  	testing<-data[-inTrain,];
   
-  modFit<-train(classe~roll_belt,method="rpart",data=training);
+  	modFit<-train(classe~roll_belt,method="rpart",data=training);
   
-  predict(modFit,newdata=testing);
+  	predict(modFit,newdata=testing);
 
 
 As in the lectures, i followed the standard steps in creating partitions from the training set. I divided the training set from the csv file into two variables; testing and training.
