@@ -14,7 +14,7 @@ The code used is as follows:
 
   	data<-read.csv("pml-training.csv");
   
-		inTrain<-createDataPartition(y=data$classe, p=0.7, list = FALSE);
+	inTrain<-createDataPartition(y=data$classe, p=0.7, list = FALSE);
   
   	training<-data[inTrain,];
   
