@@ -36,8 +36,8 @@ Also, the method used was prediction with trees. It's a good choice for this kin
 I did not use the 20 test cases for my testing data, for the prediction, because they are going to be used in the submissions assignment.
 
 The expected out of sample error, is high because only one variable (except classe) is used. To get an idea of the situation I uesd:
-c<-predict(modFit,newdata=testing)
-c<-as.numeric(c)
+	c<-predict(modFit,newdata=testing)
+	c<-as.numeric(c)
 And ploted it with the actual testing data.
 Mean square root error technic may also be used.
 Error estimated: around 0.8
