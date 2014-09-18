@@ -42,6 +42,17 @@ The expected out of sample error, is high because only one variable (except clas
 	c<-as.numeric(c)
 	
 And ploted it with the actual testing data.
-Mean square root error technic may also be used.
 
 The error I estimated: around 0.8
+
+I then used Mean Square Error MSE:
+
+	mse <- sum((c - mean(c)) ^ 2) / length(c)
+	> mse
+	[1] 1.711862
+
+And Root Mean Square Error RMSE:
+
+	rmse <- sqrt(sum((c - mean(c)) ^ 2) / length(c))
+	> rmse
+	[1] 1.308381
