@@ -43,4 +43,5 @@ The expected out of sample error, is high because only one variable (except clas
 	
 And ploted it with the actual testing data.
 Mean square root error technic may also be used.
-Error estimated: around 0.8
+
+The error I estimated: around 0.8
