@@ -1,3 +1,3 @@
 practical.machine.learning
 ==========================
-This hasan Rmd for the practical machine learning course's peer assessment project
+This has a Rmd for the practical machine learning course's peer assessment project
